@@ -29,12 +29,27 @@ navLinks.forEach(link => {
 
         navLinks.forEach(l => l.classList.remove('nav-active'));
         link.classList.add('nav-active');
+
+        // Close mobile menu on click
+        const menuBtn = document.getElementById('menu-toggle');
+        const linksContainer = document.getElementById('nav-links');
+        menuBtn?.classList.remove('open');
+        linksContainer?.classList.remove('open');
+
         window.scrollTo(0, 0);
     });
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    // Note: Home is already active in HTML
+    // Hamburger menu logic
+    const menuBtn = document.getElementById('menu-toggle');
+    const linksContainer = document.getElementById('nav-links');
+
+    menuBtn?.addEventListener('click', () => {
+        menuBtn.classList.toggle('open');
+        linksContainer.classList.toggle('open');
+    });
+
     initBoard();
     initTheme();
     initLang();

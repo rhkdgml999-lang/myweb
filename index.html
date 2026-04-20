@@ -10,13 +10,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav>
         <div class="logo">MAINTENANCE ARCHITECT</div>
-        <div class="nav-links">
+        
+        <!-- Navigation Links (Centered on Desktop) -->
+        <div id="nav-links" class="nav-links">
             <a href="#home" data-ko="홈" data-en="Home">홈</a>
             <a href="#academic" data-ko="학업 로드맵" data-en="Academic">학업 로드맵</a>
             <a href="#gallery" data-ko="갤러리" data-en="Gallery">갤러리</a>
@@ -25,93 +29,92 @@
             <a href="#career" data-ko="경력" data-en="Career">경력</a>
             <a href="#board" data-ko="자유게시판" data-en="Board">자유게시판</a>
         </div>
-        <div class="nav-actions">
-            <div class="contact-container">
-                <button id="contact-toggle" class="nav-btn" title="Contact / 연락처">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="contact-icon">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.19-1.29a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                    <span data-ko="연락처" data-en="Contact">연락처</span>
-                </button>
-                <div id="contact-dropdown" class="contact-dropdown">
-                    <div class="contact-item">
-                        <div class="contact-label-row">
-                            <span class="label" data-ko="이메일" data-en="Email">이메일</span>
-                            <button id="btn-open-email" class="send-btn" title="메일 보내기">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="m22 2-7 20-4-9-9-4Z"></path>
-                                    <path d="M22 2 11 13"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <a href="javascript:void(0)" class="copy-info"
-                            data-text="rhkdgml999@dongyang.ac.kr">rhkdgml999@dongyang.ac.kr</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="label" data-ko="전화번호" data-en="Phone">전화번호</span>
-                        <a href="javascript:void(0)" class="copy-info" data-text="010-XXXX-XXXX">010-XXXX-XXXX</a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Email Composition Modal -->
-            <div id="email-modal" class="board-modal" style="display: none;">
-                <div class="modal-content">
-                    <div class="detail-header">
-                        <h3 data-ko="메일 보내기" data-en="Send Email">메일 보내기</h3>
-                        <p style="font-size: 0.8rem; color: var(--text-sub);">To: rhkdgml999@dongyang.ac.kr</p>
+        <div class="nav-right">
+            <!-- Global Utils (Far Right on Desktop) -->
+            <div class="nav-utils">
+                <div class="contact-container">
+                    <button id="contact-toggle" class="nav-btn">
+                        <i class="fas fa-address-book"></i> <span class="hide-mobile" data-ko="연락처" data-en="Contact">연락처</span>
+                    </button>
+                    <div id="contact-dropdown" class="contact-dropdown">
+                        <div class="contact-item">
+                            <div class="contact-label-row">
+                                <span class="label" data-ko="이메일" data-en="Email">이메일</span>
+                                <button id="btn-open-email" class="send-btn" title="메일 보내기">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <a href="javascript:void(0)" class="copy-info" data-text="rhkdgml999@dongyang.ac.kr">rhkdgml999@dongyang.ac.kr</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="label" data-ko="전화번호" data-en="Phone">전화번호</span>
+                            <a href="javascript:void(0)" class="copy-info" data-text="010-XXXX-XXXX">010-XXXX-XXXX</a>
+                        </div>
                     </div>
-                    <form id="email-form">
-                        <div class="form-group">
-                            <label data-ko="보내는 분 성함" data-en="Your Name">보내는 분 성함</label>
-                            <input type="text" id="email-sender-name" required placeholder="성함을 입력하세요"
-                                data-ko-placeholder="성함을 입력하세요" data-en-placeholder="Enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label data-ko="답변받을 이메일" data-en="Your Email">답변받을 이메일</label>
-                            <input type="email" id="email-sender-address" required placeholder="example@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label data-ko="메시지" data-en="Message">메시지</label>
-                            <textarea id="email-message" required rows="6" placeholder="내용을 입력하세요"
-                                data-ko-placeholder="내용을 입력하세요" data-en-placeholder="Enter your message"></textarea>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="submit" class="btn-primary" data-ko="보내기" data-en="Send">보내기</button>
-                            <button type="button" id="btn-close-email" class="btn-secondary" data-ko="취소"
-                                data-en="Cancel">취소</button>
-                        </div>
-                    </form>
                 </div>
+
+                <button id="lang-toggle" class="nav-btn">
+                    <span class="lang-text">KO</span>
+                </button>
+
+                <button id="theme-toggle" class="theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Hamburger Button -->
+                <button id="menu-toggle" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button id="lang-toggle" class="nav-btn" title="Language/언어">
-                <span class="lang-text">KO</span>
-            </button>
-            <button id="theme-toggle" class="theme-btn" title="테마 변경">
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    style="display: none;">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
         </div>
     </nav>
+
+    <!-- Email Composition Modal (Moved outside nav) -->
+    <div id="email-modal" class="board-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="detail-header">
+                <h3 data-ko="메일 보내기" data-en="Send Email">메일 보내기</h3>
+                <p style="font-size: 0.8rem; color: var(--text-sub);">To: rhkdgml999@dongyang.ac.kr</p>
+            </div>
+            <form id="email-form">
+                <div class="form-group">
+                    <label data-ko="보내는 분 성함" data-en="Your Name">보내는 분 성함</label>
+                    <input type="text" id="email-sender-name" required placeholder="성함을 입력하세요"
+                        data-ko-placeholder="성함을 입력하세요" data-en-placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label data-ko="답변받을 이메일" data-en="Your Email">답변받을 이메일</label>
+                    <input type="email" id="email-sender-address" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label data-ko="메시지" data-en="Message">메시지</label>
+                    <textarea id="email-message" required rows="6" placeholder="내용을 입력하세요"
+                        data-ko-placeholder="내용을 입력하세요" data-en-placeholder="Enter your message"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-primary" data-ko="보내기" data-en="Send">보내기</button>
+                    <button type="button" id="btn-close-email" class="btn-secondary" data-ko="취소"
+                        data-en="Cancel">취소</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <section id="home" class="hero active">
         <div class="hero-overlay"></div>

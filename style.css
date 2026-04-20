@@ -44,58 +44,83 @@ nav {
     top: 0;
     width: 100%;
     background: var(--white);
-    opacity: 0.95;
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.8rem 5%;
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease;
 }
 
 .logo {
     font-weight: 800;
     font-size: 1.5rem;
     color: var(--samsung-blue);
-    letter-spacing: -0.5px;
+    flex: 1; /* Pushes other items */
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
+    justify-content: center;
+    flex: 2; /* Takes more space in middle */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1; /* Pushes to right end */
+}
+
+.nav-utils {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     transition: var(--transition-smooth);
-    position: relative;
+    white-space: nowrap;
 }
 
-/* Theme Button */
-.theme-btn {
+.nav-links a:hover, .nav-links a.nav-active {
+    color: var(--samsung-blue);
+}
+
+.nav-utils {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hamburger - Hidden on PC */
+.hamburger-btn {
+    display: none;
+}
+
+.nav-btn, .theme-btn {
     background: none;
     border: none;
     cursor: pointer;
     color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
     padding: 5px;
-    margin-left: 20px;
-    transition: transform 0.3s ease;
 }
 
-.theme-btn:hover {
-    transform: rotate(30deg);
-}
-
-.sun-icon,
-.moon-icon {
-    width: 24px;
-    height: 24px;
+.sun-icon, .moon-icon {
+    width: 20px;
+    height: 20px;
 }
 
 body.dark-mode .sun-icon {
@@ -1092,37 +1117,109 @@ body.dark-mode .reply-item.nested {
     height: 18px;
 }
 
-/* Mobile Optimization (Only applies to small screens) */
+/* Mobile Optimization */
 @media (max-width: 768px) {
     nav {
-        padding: 0.8rem 3%;
+        padding: 0.6rem 5%;
     }
-    
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 15px;
+    }
+
     .nav-links {
-        gap: 12px;
-        font-size: 0.75rem;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 70%;
+        height: 100vh;
+        background: var(--card-bg);
+        flex-direction: column;
+        padding: 80px 30px;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
+        z-index: 1050;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .hamburger-btn span {
+        width: 100%;
+        height: 2px;
+        background: var(--text-main);
+        transition: var(--transition-smooth);
+    }
+
+    /* Hamburger Animation to X */
+    .hamburger-btn.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .hamburger-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
     }
 
     .hero h1 {
-        font-size: 2rem !important;
+        font-size: 1.9rem !important;
         line-height: 1.4;
-    }
-
-    .value-cards {
-        flex-direction: column;
     }
 
     section {
         padding: 3rem 5% !important;
     }
+
+    .contact-dropdown {
+        width: 250px;
+        right: -50px;
+    }
 }
 
 @media (max-width: 480px) {
-    .nav-links {
-        display: none; /* Hide crowded links on tiny screens */
+    .logo {
+        font-size: 0.95rem;
     }
     
+    .nav-utils {
+        gap: 8px;
+    }
+    
+    .nav-btn, .lang-btn, .theme-btn {
+        padding: 4px;
+        font-size: 0.8rem;
+    }
+
     .hero h1 {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
     }
 }
