@@ -39,13 +39,55 @@
                 </button>
                 <div id="contact-dropdown" class="contact-dropdown">
                     <div class="contact-item">
-                        <span class="label" data-ko="이메일" data-en="Email">이메일</span>
-                        <a href="javascript:void(0)" class="copy-info" data-text="rhkdgml999@dongyang.ac.kr">rhkdgml999@dongyang.ac.kr</a>
+                        <div class="contact-label-row">
+                            <span class="label" data-ko="이메일" data-en="Email">이메일</span>
+                            <button id="btn-open-email" class="send-btn" title="메일 보내기">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m22 2-7 20-4-9-9-4Z"></path>
+                                    <path d="M22 2 11 13"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="javascript:void(0)" class="copy-info"
+                            data-text="rhkdgml999@dongyang.ac.kr">rhkdgml999@dongyang.ac.kr</a>
                     </div>
                     <div class="contact-item">
                         <span class="label" data-ko="전화번호" data-en="Phone">전화번호</span>
                         <a href="javascript:void(0)" class="copy-info" data-text="010-XXXX-XXXX">010-XXXX-XXXX</a>
                     </div>
+                </div>
+            </div>
+
+            <!-- Email Composition Modal -->
+            <div id="email-modal" class="board-modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="detail-header">
+                        <h3 data-ko="메일 보내기" data-en="Send Email">메일 보내기</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-sub);">To: rhkdgml999@dongyang.ac.kr</p>
+                    </div>
+                    <form id="email-form">
+                        <div class="form-group">
+                            <label data-ko="보내는 분 성함" data-en="Your Name">보내는 분 성함</label>
+                            <input type="text" id="email-sender-name" required placeholder="성함을 입력하세요"
+                                data-ko-placeholder="성함을 입력하세요" data-en-placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label data-ko="답변받을 이메일" data-en="Your Email">답변받을 이메일</label>
+                            <input type="email" id="email-sender-address" required placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label data-ko="메시지" data-en="Message">메시지</label>
+                            <textarea id="email-message" required rows="6" placeholder="내용을 입력하세요"
+                                data-ko-placeholder="내용을 입력하세요" data-en-placeholder="Enter your message"></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-primary" data-ko="보내기" data-en="Send">보내기</button>
+                            <button type="button" id="btn-close-email" class="btn-secondary" data-ko="취소"
+                                data-en="Cancel">취소</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <button id="lang-toggle" class="nav-btn" title="Language/언어">
@@ -74,9 +116,9 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 data-ko="기본기로 혁신을 설계하고,<br><span>AI로 유지보수의 초격차 효율</span>을 실현하는<br>엔지니어 한광희입니다."
-                data-en="Designing innovation with fundamentals,<br>realizing <span>ultra-gap efficiency</span> in maintenance with AI—I am Engineer Kwanghee Han.">
-                기본기로 혁신을 설계하고,<br><span>AI로 유지보수의 초격차 효율</span>을 실현하는<br>엔지니어 한광희입니다.
+            <h1 data-ko="기본기로 혁신을 설계하고 <br><span>AI를 활용한 유지보수의 초격차</span>를 실현하는<br>엔지니어 한광희"
+                data-en="Designing innovation with fundamentals, <br>realizing <span>ultra-gap maintenance through AI</span><br>—I am Kwanghee Han">
+                기본기로 혁신을 설계하고 <br><span>AI를 활용한 유지보수의 초격차</span>를 실현하는<br>엔지니어 한광희
             </h1>
             <div class="value-cards">
                 <div class="card">
@@ -207,7 +249,7 @@
     </section>
 
     <section id="projects">
-        <h2 data-ko="STRATEGIC PROJECTS" data-en="STRATEGIC PROJECTS">STRATEGIC PROJECTS</h2>
+        <h2>CREATIVE PROJECTS</h2>
         <div class="projects-container">
             <div class="project-box">
                 <div class="project-badge" data-ko="Efficiency" data-en="Efficiency">Efficiency</div>
@@ -398,7 +440,8 @@
     </section>
 
     <div id="chatbot-widget">
-        <button id="chatbot-toggle" title="AI 비서 프로메테우스">
+        <button id="chatbot-toggle" title="AI 비서 프로메테우스" data-ko-title="AI 비서 프로메테우스"
+            data-en-title="AI Assistant Prometheus">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
@@ -406,18 +449,20 @@
         <div id="chatbot-window" style="display: none;">
             <div class="chat-header">
                 <div>
-                    <span class="bot-name">Prometheus</span>
+                    <span class="bot-name" data-ko="프로메테우스" data-en="Prometheus">프로메테우스</span>
                     <p class="bot-status">Online</p>
                 </div>
                 <button id="chat-close">&times;</button>
             </div>
             <div id="chat-messages">
-                <div class="message bot">
+                <div class="message bot" data-ko="한광희님의 비서 프로메테우스입니다. <br>저에게 궁금한 점을 물어보세요!"
+                    data-en="I am Kwanghee Han's assistant, Prometheus. <br>Feel free to ask me anything!">
                     한광희님의 비서 프로메테우스입니다. <br>저에게 궁금한 점을 물어보세요!
                 </div>
             </div>
             <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="메시지를 입력하세요...">
+                <input type="text" id="chat-input" placeholder="메시지를 입력하세요..." data-ko-placeholder="메시지를 입력하세요..."
+                    data-en-placeholder="Type your message...">
                 <button id="chat-send">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -432,7 +477,7 @@
         <p>&copy; 2026 Maintenance Architect Kwanghee Han. Powered by AI Mastery & Samsung Spirit.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
