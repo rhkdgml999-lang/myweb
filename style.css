@@ -1092,10 +1092,37 @@ body.dark-mode .reply-item.nested {
     height: 18px;
 }
 
+/* Mobile Optimization (Only applies to small screens) */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 3%;
+    }
+    
+    .nav-links {
+        gap: 12px;
+        font-size: 0.75rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.4;
+    }
+
+    .value-cards {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 3rem 5% !important;
+    }
+}
+
 @media (max-width: 480px) {
-    #chatbot-window {
-        width: calc(100vw - 40px);
-        height: 70vh;
-        right: -10px;
+    .nav-links {
+        display: none; /* Hide crowded links on tiny screens */
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
     }
 }
