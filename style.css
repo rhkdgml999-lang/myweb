@@ -139,6 +139,67 @@ body.dark-mode .moon-icon {
     border-color: var(--samsung-blue);
 }
 
+/* Contact dropdown */
+.contact-container {
+    position: relative;
+}
+
+.contact-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-dropdown.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item .label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--samsung-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 700;
+    word-break: break-all;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.contact-item a:hover {
+    color: var(--samsung-blue);
+    cursor: copy;
+}
+
+.contact-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
 .nav-links a:hover {
     color: var(--samsung-blue);
 }

@@ -30,7 +30,45 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initLang();
     initChat();
+    initContact();
 });
+
+function initContact() {
+    const toggle = document.getElementById('contact-toggle');
+    const dropdown = document.getElementById('contact-dropdown');
+
+    if (toggle && dropdown) {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Copy functionality
+        const copyItems = dropdown.querySelectorAll('.copy-info');
+        copyItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const text = item.getAttribute('data-text');
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = item.innerText;
+                    const isKo = localStorage.getItem('site_lang') !== 'en';
+                    item.innerText = isKo ? '복사되었습니다!' : 'Copied!';
+                    item.style.color = '#00D1FF';
+                    
+                    setTimeout(() => {
+                        item.innerText = originalText;
+                        item.style.color = '';
+                    }, 2000);
+                });
+            });
+        });
+    }
+}
 
 function initChat() {
     const toggle = document.getElementById('chatbot-toggle');

@@ -26,6 +26,28 @@
             <a href="#board" data-ko="자유게시판" data-en="Board">자유게시판</a>
         </div>
         <div class="nav-actions">
+            <div class="contact-container">
+                <button id="contact-toggle" class="nav-btn" title="Contact / 연락처">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="contact-icon">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.19-1.29a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span data-ko="연락처" data-en="Contact">연락처</span>
+                </button>
+                <div id="contact-dropdown" class="contact-dropdown">
+                    <div class="contact-item">
+                        <span class="label" data-ko="이메일" data-en="Email">이메일</span>
+                        <a href="javascript:void(0)" class="copy-info" data-text="rhkdgml999@dongyang.ac.kr">rhkdgml999@dongyang.ac.kr</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label" data-ko="전화번호" data-en="Phone">전화번호</span>
+                        <a href="javascript:void(0)" class="copy-info" data-text="010-XXXX-XXXX">010-XXXX-XXXX</a>
+                    </div>
+                </div>
+            </div>
             <button id="lang-toggle" class="nav-btn" title="Language/언어">
                 <span class="lang-text">KO</span>
             </button>
@@ -41,7 +63,8 @@
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="display: none;">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
@@ -51,7 +74,7 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 data-ko="기본기로 혁신을 설계하고,<br><span>AI로 유지보수의 초격차 효율</span>을 실현하는<br>엔지니어 한광희입니다." 
+            <h1 data-ko="기본기로 혁신을 설계하고,<br><span>AI로 유지보수의 초격차 효율</span>을 실현하는<br>엔지니어 한광희입니다."
                 data-en="Designing innovation with fundamentals,<br>realizing <span>ultra-gap efficiency</span> in maintenance with AI—I am Engineer Kwanghee Han.">
                 기본기로 혁신을 설계하고,<br><span>AI로 유지보수의 초격차 효율</span>을 실현하는<br>엔지니어 한광희입니다.
             </h1>
@@ -59,17 +82,23 @@
                 <div class="card">
                     <div class="card-icon">01</div>
                     <h3 data-ko="AI 활용 실무 자동화 전문가" data-en="AI-driven Practical Automation Expert">AI 활용 실무 자동화 전문가</h3>
-                    <p data-ko="유지보수 프로세스의 지능형 자동화를 통한 가동률 극대화" data-en="Maximizing operation rates through intelligent automation of maintenance processes">유지보수 프로세스의 지능형 자동화를 통한 가동률 극대화</p>
+                    <p data-ko="유지보수 프로세스의 지능형 자동화를 통한 가동률 극대화"
+                        data-en="Maximizing operation rates through intelligent automation of maintenance processes">
+                        유지보수 프로세스의 지능형 자동화를 통한 가동률 극대화</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">02</div>
                     <h3 data-ko="바이브 코딩 기반 시스템 지휘자" data-en="Vibe Coding-based System Conductor">바이브 코딩 기반 시스템 지휘자</h3>
-                    <p data-ko="AI 에이전트를 조율하여 정밀한 시스템 아키텍처 구축" data-en="Building precise system architectures by orchestrating AI agents">AI 에이전트를 조율하여 정밀한 시스템 아키텍처 구축</p>
+                    <p data-ko="AI 에이전트를 조율하여 정밀한 시스템 아키텍처 구축"
+                        data-en="Building precise system architectures by orchestrating AI agents">AI 에이전트를 조율하여 정밀한 시스템
+                        아키텍처 구축</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">03</div>
                     <h3 data-ko="로봇/AI 융합 실천형 인재" data-en="Robot/AI Convergence Practitioner">로봇/AI 융합 실천형 인재</h3>
-                    <p data-ko="하드웨어와 소프트웨어를 넘나드는 통합 문제 해결 능력" data-en="Integrated problem-solving skills across hardware and software">하드웨어와 소프트웨어를 넘나드는 통합 문제 해결 능력</p>
+                    <p data-ko="하드웨어와 소프트웨어를 넘나드는 통합 문제 해결 능력"
+                        data-en="Integrated problem-solving skills across hardware and software">하드웨어와 소프트웨어를 넘나드는 통합 문제
+                        해결 능력</p>
                 </div>
             </div>
         </div>
@@ -83,7 +112,8 @@
                 <div class="tier-items">
                     <div class="tier-item">
                         <h5 data-ko="3차원 CAD" data-en="3D CAD">3차원 CAD</h5>
-                        <p data-ko="SolidWorks 기반 정밀 설계 & 기구학" data-en="SolidWorks-based Precision Design & Kinematics">SolidWorks 기반 정밀 설계 & 기구학</p>
+                        <p data-ko="SolidWorks 기반 정밀 설계 & 기구학" data-en="SolidWorks-based Precision Design & Kinematics">
+                            SolidWorks 기반 정밀 설계 & 기구학</p>
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="디지털논리회로" data-en="Digital Logic Circuit">디지털논리회로</h5>
@@ -91,7 +121,8 @@
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="엔지니어링 기초" data-en="Engineering Basics">엔지니어링 기초</h5>
-                        <p data-ko="공학적 마인드 및 수치 해석" data-en="Engineering Mindset & Numerical Analysis">공학적 마인드 및 수치 해석</p>
+                        <p data-ko="공학적 마인드 및 수치 해석" data-en="Engineering Mindset & Numerical Analysis">공학적 마인드 및 수치 해석
+                        </p>
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="전공영어" data-en="Technical English">전공영어</h5>
@@ -105,7 +136,8 @@
                 <div class="tier-items">
                     <div class="tier-item">
                         <h5 data-ko="PLC 프로그래밍 & 제어" data-en="PLC Programming & Control">PLC 프로그래밍 & 제어</h5>
-                        <p data-ko="생산 자동화 설비 제어 최적화" data-en="Optimization of Production Automation Equipment Control">생산 자동화 설비 제어 최적화</p>
+                        <p data-ko="생산 자동화 설비 제어 최적화" data-en="Optimization of Production Automation Equipment Control">
+                            생산 자동화 설비 제어 최적화</p>
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="마이크로컨트롤러" data-en="Microcontroller">마이크로컨트롤러</h5>
@@ -113,7 +145,8 @@
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="전기/전자회로" data-en="Electric/Electronic Circuits">전기/전자회로</h5>
-                        <p data-ko="신호 처리 및 회로 분석 역량" data-en="Signal Processing & Circuit Analysis Competency">신호 처리 및 회로 분석 역량</p>
+                        <p data-ko="신호 처리 및 회로 분석 역량" data-en="Signal Processing & Circuit Analysis Competency">신호 처리 및
+                            회로 분석 역량</p>
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="파이썬 프로그래밍" data-en="Python Programming">파이썬 프로그래밍</h5>
@@ -127,11 +160,13 @@
                 <div class="tier-items">
                     <div class="tier-item">
                         <h5 data-ko="로봇 센서 & 모터 제어" data-en="Robot Sensor & Motor Control">로봇 센서 & 모터 제어</h5>
-                        <p data-ko="구동체 정밀 제어 및 효율 진단" data-en="Actuator Precision Control & Efficiency Diagnosis">구동체 정밀 제어 및 효율 진단</p>
+                        <p data-ko="구동체 정밀 제어 및 효율 진단" data-en="Actuator Precision Control & Efficiency Diagnosis">구동체
+                            정밀 제어 및 효율 진단</p>
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="펌웨어 프로그래밍" data-en="Firmware Programming">펌웨어 프로그래밍</h5>
-                        <p data-ko="설비 펌웨어 고도화 및 트러블 슈팅" data-en="Equipment Firmware Advancement & Troubleshooting">설비 펌웨어 고도화 및 트러블 슈팅</p>
+                        <p data-ko="설비 펌웨어 고도화 및 트러블 슈팅" data-en="Equipment Firmware Advancement & Troubleshooting">설비
+                            펌웨어 고도화 및 트러블 슈팅</p>
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="캡스톤 디자인" data-en="Capstone Design">캡스톤 디자인</h5>
@@ -139,7 +174,8 @@
                     </div>
                     <div class="tier-item">
                         <h5 data-ko="현장실습" data-en="Field Practice">현장실습</h5>
-                        <p data-ko="실무 유지보수 프로세스 직접 경험" data-en="Direct Experience in Practical Maintenance Processes">실무 유지보수 프로세스 직접 경험</p>
+                        <p data-ko="실무 유지보수 프로세스 직접 경험" data-en="Direct Experience in Practical Maintenance Processes">
+                            실무 유지보수 프로세스 직접 경험</p>
                     </div>
                 </div>
             </div>
@@ -151,15 +187,21 @@
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="assets/agv_robot_3d_model_1775441490229.png" alt="AGV Robot">
-                <div class="overlay" data-ko="삼성전자 생산 설비 유지보수에 기여할 정밀 설계 자산 (AGV)" data-en="Precision design asset for contributing to Samsung Electronics production facility maintenance (AGV)">삼성전자 생산 설비 유지보수에 기여할 정밀 설계 자산 (AGV)</div>
+                <div class="overlay" data-ko="삼성전자 생산 설비 유지보수에 기여할 정밀 설계 자산 (AGV)"
+                    data-en="Precision design asset for contributing to Samsung Electronics production facility maintenance (AGV)">
+                    삼성전자 생산 설비 유지보수에 기여할 정밀 설계 자산 (AGV)</div>
             </div>
             <div class="gallery-item">
                 <img src="assets/helical_gear_detail_1775442143092.png" alt="Helical Gear">
-                <div class="overlay" data-ko="기구 메커니즘 해석 및 정밀 기어 설계 (Gear & Brake)" data-en="Mechanism analysis and precision gear design (Gear & Brake)">기구 메커니즘 해석 및 정밀 기어 설계 (Gear & Brake)</div>
+                <div class="overlay" data-ko="기구 메커니즘 해석 및 정밀 기어 설계 (Gear & Brake)"
+                    data-en="Mechanism analysis and precision gear design (Gear & Brake)">기구 메커니즘 해석 및 정밀 기어 설계 (Gear &
+                    Brake)</div>
             </div>
             <div class="gallery-item">
                 <img src="assets/electronics_module_rendering_1775441780714.png" alt="Electronic Module">
-                <div class="overlay" data-ko="IoT 기반 하드웨어 제어 및 센서 인터페이스 (Wio-SX1262)" data-en="IoT-based hardware control and sensor interface (Wio-SX1262)">IoT 기반 하드웨어 제어 및 센서 인터페이스 (Wio-SX1262)</div>
+                <div class="overlay" data-ko="IoT 기반 하드웨어 제어 및 센서 인터페이스 (Wio-SX1262)"
+                    data-en="IoT-based hardware control and sensor interface (Wio-SX1262)">IoT 기반 하드웨어 제어 및 센서 인터페이스
+                    (Wio-SX1262)</div>
             </div>
         </div>
     </section>
@@ -169,20 +211,35 @@
         <div class="projects-container">
             <div class="project-box">
                 <div class="project-badge" data-ko="Efficiency" data-en="Efficiency">Efficiency</div>
-                <h3 data-ko="바스터즈(Basters): 물류 혁신 지게차" data-en="Basters: Logistics Innovation Forklift">바스터즈(Basters): 물류 혁신 지게차</h3>
-                <p><strong><span data-ko="핵심 논리:" data-en="Core Logic:">핵심 논리:</span></strong> <span data-ko="회전-왕복 운동 변환 메커니즘을 적용하여 기존 지게차의 한계를 극복. " data-en="Overcoming limits of conventional forklifts by applying a rotation-reciprocation conversion mechanism.">회전-왕복 운동 변환 메커니즘을 적용하여 기존 지게차의 한계를 극복. </span></p>
+                <h3 data-ko="바스터즈(Basters): 물류 혁신 지게차" data-en="Basters: Logistics Innovation Forklift">바스터즈(Basters):
+                    물류 혁신 지게차</h3>
+                <p><strong><span data-ko="핵심 논리:" data-en="Core Logic:">핵심 논리:</span></strong> <span
+                        data-ko="회전-왕복 운동 변환 메커니즘을 적용하여 기존 지게차의 한계를 극복. "
+                        data-en="Overcoming limits of conventional forklifts by applying a rotation-reciprocation conversion mechanism.">회전-왕복
+                        운동 변환 메커니즘을 적용하여 기존 지게차의 한계를 극복. </span></p>
                 <ul>
-                    <li data-ko="협소 공간 내 물류 적재 효율 25% 개선" data-en="25% improvement in logistics loading efficiency in narrow spaces">협소 공간 내 물류 적재 효율 25% 개선</li>
-                    <li data-ko="기구학적 해석을 통한 부하 분배 최적화" data-en="Optimization of load distribution through kinematic analysis">기구학적 해석을 통한 부하 분배 최적화</li>
+                    <li data-ko="협소 공간 내 물류 적재 효율 25% 개선"
+                        data-en="25% improvement in logistics loading efficiency in narrow spaces">협소 공간 내 물류 적재 효율 25%
+                        개선</li>
+                    <li data-ko="기구학적 해석을 통한 부하 분배 최적화"
+                        data-en="Optimization of load distribution through kinematic analysis">기구학적 해석을 통한 부하 분배 최적화
+                    </li>
                 </ul>
             </div>
             <div class="project-box">
                 <div class="project-badge" data-ko="Data-Driven" data-en="Data-Driven">Data-Driven</div>
-                <h3 data-ko="스마트 알림 무드등: 실시간 제어" data-en="Smart Notification Mood Light: Real-time Control">스마트 알림 무드등: 실시간 제어</h3>
-                <p><strong><span data-ko="핵심 논리:" data-en="Core Logic:">핵심 논리:</span></strong> <span data-ko="DHT11 센서와 아두이노를 활용한 자가 진단형 환경 제어 시스템." data-en="Self-diagnostic environment control system using DHT11 sensor and Arduino.">DHT11 센서와 아두이노를 활용한 자가 진단형 환경 제어 시스템.</span></p>
+                <h3 data-ko="스마트 알림 무드등: 실시간 제어" data-en="Smart Notification Mood Light: Real-time Control">스마트 알림 무드등:
+                    실시간 제어</h3>
+                <p><strong><span data-ko="핵심 논리:" data-en="Core Logic:">핵심 논리:</span></strong> <span
+                        data-ko="DHT11 센서와 아두이노를 활용한 자가 진단형 환경 제어 시스템."
+                        data-en="Self-diagnostic environment control system using DHT11 sensor and Arduino.">DHT11 센서와
+                        아두이노를 활용한 자가 진단형 환경 제어 시스템.</span></p>
                 <ul>
-                    <li data-ko="시리얼 모니터링을 통한 실시간 데이터 유지보수" data-en="Real-time data maintenance through serial monitoring">시리얼 모니터링을 통한 실시간 데이터 유지보수</li>
-                    <li data-ko="임계값 도출 및 자동화 알고리즘 구현" data-en="Implementation of threshold derivation and automation algorithms">임계값 도출 및 자동화 알고리즘 구현</li>
+                    <li data-ko="시리얼 모니터링을 통한 실시간 데이터 유지보수"
+                        data-en="Real-time data maintenance through serial monitoring">시리얼 모니터링을 통한 실시간 데이터 유지보수</li>
+                    <li data-ko="임계값 도출 및 자동화 알고리즘 구현"
+                        data-en="Implementation of threshold derivation and automation algorithms">임계값 도출 및 자동화 알고리즘 구현
+                    </li>
                 </ul>
             </div>
         </div>
@@ -193,17 +250,23 @@
         <div class="ai-features">
             <div class="ai-feature-card">
                 <h3 data-ko="Vibe Coding" data-en="Vibe Coding">Vibe Coding</h3>
-                <p data-ko="의도 중심의 AI 지휘를 통한 코드 분석 및 유지보수 가속화" data-en="Accelerating code analysis and maintenance through intention-oriented AI orchestration">의도 중심의 AI 지휘를 통한 코드 분석 및 유지보수 가속화</p>
+                <p data-ko="의도 중심의 AI 지휘를 통한 코드 분석 및 유지보수 가속화"
+                    data-en="Accelerating code analysis and maintenance through intention-oriented AI orchestration">의도
+                    중심의 AI 지휘를 통한 코드 분석 및 유지보수 가속화</p>
                 <div class="badge" data-ko="Advanced" data-en="Advanced">Advanced</div>
             </div>
             <div class="ai-feature-card">
                 <h3 data-ko="IAFA Framework" data-en="IAFA Framework">IAFA Framework</h3>
-                <p data-ko="Identity, Actor, Function, Aesthetic 기반의 정밀 프롬프트 설계" data-en="Precision prompt design based on Identity, Actor, Function, Aesthetic">Identity, Actor, Function, Aesthetic 기반의 정밀 프롬프트 설계</p>
+                <p data-ko="Identity, Actor, Function, Aesthetic 기반의 정밀 프롬프트 설계"
+                    data-en="Precision prompt design based on Identity, Actor, Function, Aesthetic">Identity, Actor,
+                    Function, Aesthetic 기반의 정밀 프롬프트 설계</p>
                 <div class="badge" data-ko="Master" data-en="Master">Master</div>
             </div>
             <div class="ai-feature-card">
                 <h3 data-ko="Validation Control" data-en="Validation Control">Validation Control</h3>
-                <p data-ko="Artifacts 기반 시스템 검증 및 기술 문서 자동 고도화" data-en="System verification based on artifacts and automatic technical documentation advancement">Artifacts 기반 시스템 검증 및 기술 문서 자동 고도화</p>
+                <p data-ko="Artifacts 기반 시스템 검증 및 기술 문서 자동 고도화"
+                    data-en="System verification based on artifacts and automatic technical documentation advancement">
+                    Artifacts 기반 시스템 검증 및 기술 문서 자동 고도화</p>
                 <div class="badge" data-ko="Expert" data-en="Expert">Expert</div>
             </div>
         </div>
@@ -214,13 +277,21 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="content">
-                    <div class="time" data-ko="2024.12 ~ 2026.04 (현재 재직중)" data-en="2024.12 ~ 2026.04 (Currently Employed)">2024.12 ~ 2026.04 (현재 재직중)</div>
+                    <div class="time" data-ko="2024.12 ~ 2026.04 (현재 재직중)"
+                        data-en="2024.12 ~ 2026.04 (Currently Employed)">2024.12 ~ 2026.04 (현재 재직중)</div>
                     <h4 data-ko="주식회사 이지피티테크 (Ezpttech)" data-en="Ezpttech Co., Ltd.">주식회사 이지피티테크 (Ezpttech)</h4>
-                    <p><strong><span data-ko="직무:" data-en="Role:">직무:</span></strong> <span data-ko="시스템 유지보수, 엔지니어, 테스터" data-en="System Maintenance, Engineer, Tester">시스템 유지보수, 엔지니어, 테스터</span></p>
+                    <p><strong><span data-ko="직무:" data-en="Role:">직무:</span></strong> <span
+                            data-ko="시스템 유지보수, 엔지니어, 테스터" data-en="System Maintenance, Engineer, Tester">시스템 유지보수, 엔지니어,
+                            테스터</span></p>
                     <ul>
-                        <li data-ko="AI 기반 자동화 유지보수 프로세스 구축 및 운영" data-en="Building and operating AI-based automated maintenance processes">AI 기반 자동화 유지보수 프로세스 구축 및 운영</li>
-                        <li data-ko="생산 설비 로그 분석 및 장애 대응 체계 디지털화" data-en="Digitizing production facility log analysis and failure response systems">생산 설비 로그 분석 및 장애 대응 체계 디지털화</li>
-                        <li data-ko="문서 행정 작업, 고객 통화 대응" data-en="Clerical work, customer calls response">문서 행정 작업, 고객 통화 대응</li>
+                        <li data-ko="AI 기반 자동화 유지보수 프로세스 구축 및 운영"
+                            data-en="Building and operating AI-based automated maintenance processes">AI 기반 자동화 유지보수
+                            프로세스 구축 및 운영</li>
+                        <li data-ko="생산 설비 로그 분석 및 장애 대응 체계 디지털화"
+                            data-en="Digitizing production facility log analysis and failure response systems">생산 설비 로그
+                            분석 및 장애 대응 체계 디지털화</li>
+                        <li data-ko="문서 행정 작업, 고객 통화 대응" data-en="Clerical work, customer calls response">문서 행정 작업, 고객
+                            통화 대응</li>
                     </ul>
                 </div>
             </div>
@@ -232,7 +303,7 @@
             <div class="board-actions">
                 <button id="btn-write" class="btn-primary" data-ko="글쓰기" data-en="Write">글쓰기</button>
             </div>
-            
+
             <div id="board-list-view">
                 <table class="board-table">
                     <thead>
@@ -274,11 +345,13 @@
                         <div class="form-group">
                             <label for="post-file" data-ko="이미지/파일 첨부" data-en="Attach Image/File">이미지/파일 첨부</label>
                             <input type="file" id="post-file">
-                            <p style="font-size: 0.7rem; color: #888; margin-top: 5px;">* 로컬 저장소 용량 제한으로 작은 파일만 가능합니다.</p>
+                            <p style="font-size: 0.7rem; color: #888; margin-top: 5px;">* 로컬 저장소 용량 제한으로 작은 파일만 가능합니다.
+                            </p>
                         </div>
                         <div class="form-buttons">
                             <button type="submit" class="btn-primary" data-ko="저장" data-en="Save">저장</button>
-                            <button type="button" id="btn-cancel" class="btn-secondary" data-ko="취소" data-en="Cancel">취소</button>
+                            <button type="button" id="btn-cancel" class="btn-secondary" data-ko="취소"
+                                data-en="Cancel">취소</button>
                         </div>
                     </form>
                 </div>
@@ -296,10 +369,11 @@
                     <div class="detail-body">
                         <p id="view-content">내용</p>
                     </div>
-                    
+
                     <!-- File Attachment Area -->
-                    <div id="view-attachment" style="margin-top: 1.5rem; border-top: 1px dashed #ddd; padding-top: 1rem;"></div>
-                    
+                    <div id="view-attachment"
+                        style="margin-top: 1.5rem; border-top: 1px dashed #ddd; padding-top: 1rem;"></div>
+
                     <div class="reply-section">
                         <h4 data-ko="답글" data-en="Replies">답글</h4>
                         <div id="reply-list"></div>
